@@ -1,0 +1,61 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/setup.lua"))()
+local KeySystem = _G.KSS.classes.keysystem.new("RBLXHub")
+
+_G.Key = _G.Key or ""
+_G.NameGUI = "Key System"
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+    Title = _G.NameGUI,
+    Style = 3,
+    SizeX = 350,
+    SizeY = 250,
+    Theme = "Dark",
+    ColorOverrides = {
+        MainFrame = Color3.fromRGB(25,25,25)
+    }
+})
+
+local Y = X.New({
+    Title = "Verify"
+})
+
+local H = Y.TextField({
+    Text = "Insert your key",
+    Callback = function(value)
+        _G.Key = value
+    end
+})
+
+Y.Button({
+    Text = "Copy URL For GetKey",
+    Callback = function()
+        KeySystem:copyGetKeyURL()
+    end
+})
+
+local A = Y.Button({
+    Text = "Confirm",
+    Callback = function()
+        pcall(function()
+            local Key = KeySystem:key() -- Create class Key
+            if Key.finish then
+                print("Key Valid")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/toosiwhip/legacy/main/statue.lua"))()
+
+
+                game:GetService("CoreGui")[_G.NameGUI].Parent = nil
+            else
+                print("Key is No Valid")
+            end
+        end)
+    end
+})
+
+Y.Button({
+    Text = "YouTube Channel",
+    Callback = function()
+        setclipboard("https://www.youtube.com/@KublixR")
+    end
+})
