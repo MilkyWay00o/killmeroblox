@@ -42,8 +42,7 @@ local A = Y.Button({
             local Key = KeySystem:key() -- Create class Key
             if Key.finish then
                 print("Key Valid")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/toosiwhip/legacy/main/statue.lua"))()
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KidichiHB/Kidachi/main/Scripts/MM2_V2"))()
 
                 game:GetService("CoreGui")[_G.NameGUI].Parent = nil
             else
